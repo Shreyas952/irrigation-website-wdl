@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sensor Data</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>Sensor Data</h1>
+
+    <p>
+        Smart Irrigation using AI &amp; Sensor Technology
+    </p>
+
+</header>
+
+
+<nav>
+
+    <ul>
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="farm-info.html">Farm Dashboard</a>
+        </li>
+
+        <li>
+            <a href="advisory.html">Irrigation Advisory</a>
+        </li>
+
+        <li>
+            <a href="sensor-data.html">Sensor Data</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="page-container">
+
+
+<aside class="sidebar">
+
+    <h2>Sensor Data</h2>
+
+    <ul>
+
+        <li>
+            <a href="#readings">Sensor Readings</a>
+        </li>
+
+        <li>
+            <a href="#analysis">Moisture Analysis</a>
+        </li>
+
+        <li>
+            <a href="#status">Sensor Status</a>
+        </li>
+
+    </ul>
+
+</aside>
+
+
+<section class="content">
+
+
+<!-- ==========================================
+     SENSOR READINGS
+     ========================================== -->
+
+<div class="info-section" id="readings">
+
+    <h2>Hourly Soil Moisture Readings</h2>
+
+    <p>
+        Soil moisture sensor readings collected every hour
+        from Plot A01.
+    </p>
+
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <thead>
+
+            <tr>
+
+                <th>Hour</th>
+
+                <th>Soil Moisture (%)</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody id="sensorTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+<!-- ==========================================
+     MOISTURE ANALYSIS
+     ========================================== -->
+
+<div class="info-section" id="analysis">
+
+    <h2>Soil Moisture Analysis</h2>
+
+    <p>
+
+        <strong>Minimum Moisture:</strong>
+
+        <span id="minimumMoisture"></span>%
+
+    </p>
+
+
+    <p>
+
+        <strong>Maximum Moisture:</strong>
+
+        <span id="maximumMoisture"></span>%
+
+    </p>
+
+
+    <p>
+
+        <strong>Average Moisture:</strong>
+
+        <span id="averageMoisture"></span>%
+
+    </p>
+
+
+    <p>
+
+        <strong>Critical Moisture Value:</strong>
+
+        <span id="criticalValue"></span>%
+
+    </p>
+
+
+    <p>
+
+        <strong>Readings Below Critical Value:</strong>
+
+        <span id="belowCritical"></span>
+
+    </p>
+
+</div>
+
+
+<!-- ==========================================
+     SENSOR STATUS
+     ========================================== -->
+
+<div class="info-section" id="status">
+
+    <h2>Sensor Status</h2>
+
+    <p>
+
+        <strong>Sensor ID:</strong>
+        SMS-A01
+
+    </p>
+
+
+    <p>
+
+        <strong>Sensor Type:</strong>
+        Soil Moisture Sensor
+
+    </p>
+
+
+    <p>
+
+        <strong>Plot ID:</strong>
+        PLOT-A01
+
+    </p>
+
+
+    <p>
+
+        <strong>Reading Interval:</strong>
+        Every 1 Hour
+
+    </p>
+
+
+    <p>
+
+        <strong>Status:</strong>
+
+        <mark>Active</mark>
+
+    </p>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 AI Smart Irrigation Advisory System
+    </p>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   TASK 4: SENSOR READINGS ARRAY
+   ========================================== */
+
+// Soil moisture readings collected every hour
+
+let readings = [
+    25,
+    32,
+    28,
+    45,
+    51,
+    38,
+    27,
+    42
+];
+
+
+// Critical soil moisture value
+
+let criticalValue = 30;
+
+
+/* ==========================================
+   1. DISPLAY ALL SENSOR READINGS
+   ========================================== */
+
+let table = document.getElementById("sensorTable");
+
+for (let i = 0; i < readings.length; i++) {
+
+    let row = table.insertRow();
+
+    let hourCell = row.insertCell(0);
+
+    let moistureCell = row.insertCell(1);
+
+    let statusCell = row.insertCell(2);
+
+
+    hourCell.innerHTML =
+        "Hour " + (i + 1);
+
+
+    moistureCell.innerHTML =
+        readings[i] + "%";
+
+
+    // Check moisture status
+
+    if (readings[i] < criticalValue) {
+
+        statusCell.innerHTML =
+            "Low - Irrigation Required";
+
+    }
+
+    else if (readings[i] <= 50) {
+
+        statusCell.innerHTML =
+            "Normal - Monitor";
+
+    }
+
+    else {
+
+        statusCell.innerHTML =
+            "Good";
+
+    }
+
+}
+
+
+/* ==========================================
+   2. FIND MINIMUM MOISTURE
+   ========================================== */
+
+let minimum =
+    Math.min(...readings);
+
+
+/* ==========================================
+   3. FIND MAXIMUM MOISTURE
+   ========================================== */
+
+let maximum =
+    Math.max(...readings);
+
+
+/* ==========================================
+   4. CALCULATE AVERAGE MOISTURE
+   ========================================== */
+
+let total = 0;
+
+
+for (let value of readings) {
+
+    total = total + value;
+
+}
+
+
+let average =
+    total / readings.length;
+
+
+/* ==========================================
+   5. COUNT READINGS BELOW CRITICAL VALUE
+   ========================================== */
+
+let countBelowCritical = 0;
+
+
+for (let value of readings) {
+
+    if (value < criticalValue) {
+
+        countBelowCritical++;
+
+    }
+
+}
+
+
+/* ==========================================
+   DISPLAY ANALYSIS RESULTS
+   ========================================== */
+
+document.getElementById("minimumMoisture").innerHTML =
+    minimum;
+
+
+document.getElementById("maximumMoisture").innerHTML =
+    maximum;
+
+
+document.getElementById("averageMoisture").innerHTML =
+    average.toFixed(2);
+
+
+document.getElementById("criticalValue").innerHTML =
+    criticalValue;
+
+
+document.getElementById("belowCritical").innerHTML =
+    countBelowCritical;
+
+
+/* ==========================================
+   ALERT
+   ========================================== */
+
+alert(
+    "Soil Moisture Analysis\n\n" +
+
+    "Minimum Moisture: " +
+    minimum + "%\n" +
+
+    "Maximum Moisture: " +
+    maximum + "%\n" +
+
+    "Average Moisture: " +
+    average.toFixed(2) + "%\n" +
+
+    "Readings Below Critical Value: " +
+    countBelowCritical
+);
+
+</script>
+
+
+</body>
+
+</html>

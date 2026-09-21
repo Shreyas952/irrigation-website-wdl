@@ -1,0 +1,551 @@
+/* =====================================================
+   AI-BASED SMART IRRIGATION ADVISORY SYSTEM
+   MAIN EXTERNAL CSS
+   ===================================================== */
+
+
+/* =====================================================
+   TASK 3: WHOLE WEBSITE THEME
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f8e9;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+/* Common headings */
+
+h1,
+h2,
+h3 {
+    color: #1b5e20;
+}
+
+
+/* Paragraph */
+
+p {
+    font-size: 16px;
+}
+
+
+/* Links */
+
+a {
+    color: #2e7d32;
+}
+
+
+/* Horizontal line */
+
+hr {
+    border: 0;
+    border-top: 2px solid #81c784;
+}
+
+
+/* =====================================================
+   COMMON NAVIGATION
+   ===================================================== */
+
+nav {
+    background-color: #2e7d32;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 5px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    background-color: #2e7d32;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #f9a825;
+    color: black;
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   TASK 4: FARM SERVICES SIDEBAR
+   ===================================================== */
+
+.sidebar {
+    background-color: white;
+    border: 2px solid #81c784;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #1b5e20;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 12px 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: #1b5e20;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #c8e6c9;
+    color: #0d3b13;
+}
+
+
+/* =====================================================
+   TASK 5: FARM / ADVISORY CARDS
+   ===================================================== */
+
+.card-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.farm-card {
+    display: inline-block;
+    width: 220px;
+    min-height: 200px;
+
+    margin: 15px;
+    padding: 20px;
+
+    border: 2px solid #66bb6a;
+    border-radius: 10px;
+
+    background-color: white;
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+    vertical-align: top;
+
+    transition: 0.3s;
+}
+
+.farm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.farm-card h3 {
+    color: #2e7d32;
+}
+
+.farm-card a {
+    display: inline-block;
+
+    background-color: #2e7d32;
+
+    color: white;
+
+    padding: 8px 15px;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+.farm-card a:hover {
+    background-color: #f9a825;
+    color: black;
+}
+
+
+/* =====================================================
+   TASK 6: FARM IMAGE GALLERY
+   ===================================================== */
+
+.gallery {
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery figure {
+    display: inline-block;
+    margin: 15px;
+    vertical-align: top;
+
+    background-color: white;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery img {
+    width: 220px;
+    height: 160px;
+
+    object-fit: cover;
+
+    border: 3px solid #388e3c;
+
+    border-radius: 8px;
+
+    transition: transform 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.gallery figcaption {
+    font-weight: bold;
+    color: #1b5e20;
+    padding: 8px;
+}
+
+
+/* =====================================================
+   IRRIGATION ADVISORY STYLING
+   ===================================================== */
+
+.advisory-box {
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-left: 8px solid #2e7d32;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.advisory-box strong {
+    color: #1b5e20;
+}
+
+.stress-high {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.stress-medium {
+    color: #ef6c00;
+    font-weight: bold;
+}
+
+.stress-low {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   FARM INFORMATION PAGE
+   ===================================================== */
+
+.info-section {
+    background-color: white;
+
+    margin: 20px auto;
+
+    padding: 20px;
+
+    max-width: 900px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section ol,
+.info-section ul {
+    padding-left: 30px;
+}
+
+.info-section li {
+    margin: 8px 0;
+}
+
+.info-section dt {
+    font-weight: bold;
+    color: #1b5e20;
+    margin-top: 10px;
+}
+
+.info-section dd {
+    margin-left: 20px;
+}
+
+
+/* =====================================================
+   SENSOR DATA
+   ===================================================== */
+
+.sensor-container {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.sensor-card {
+    width: 220px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border: 2px solid #81c784;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.sensor-value {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #2e7d32;
+}
+
+
+/* =====================================================
+   PLOT INFORMATION
+   ===================================================== */
+
+.plot-container {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.plot-card {
+    width: 280px;
+
+    background-color: white;
+
+    border: 2px solid #66bb6a;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.plot-card h3 {
+    border-bottom: 2px solid #81c784;
+
+    padding-bottom: 8px;
+}
+
+
+/* =====================================================
+   WEATHER PAGE
+   ===================================================== */
+
+.weather-container {
+    text-align: center;
+
+    padding: 20px;
+}
+
+.weather-frame {
+    width: 90%;
+
+    height: 450px;
+
+    border: 3px solid #388e3c;
+
+    border-radius: 10px;
+
+    margin: 15px auto;
+}
+
+
+/* =====================================================
+   MEDIA PAGE
+   ===================================================== */
+
+.media-container {
+    text-align: center;
+
+    padding: 20px;
+}
+
+.media-container video {
+    max-width: 90%;
+
+    border: 4px solid #2e7d32;
+
+    border-radius: 10px;
+}
+
+.media-container audio {
+    margin: 20px;
+
+    width: 80%;
+}
+
+
+/* =====================================================
+   TASK 10: HIGHLIGHT / OFFER BOX
+   ===================================================== */
+
+.offer-box {
+    background-color: #ffeb3b;
+
+    color: #d84315;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin: 25px 0;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 15px #ff9800;
+
+    text-shadow: 1px 1px 2px white;
+
+    animation: glow 1.5s infinite alternate;
+}
+
+
+/* Glow animation */
+
+@keyframes glow {
+
+    from {
+        box-shadow: 0 0 5px #ff9800;
+    }
+
+    to {
+        box-shadow: 0 0 25px #ff5722;
+    }
+}
+
+
+/* =====================================================
+   COMMON FOOTER
+   ===================================================== */
+
+footer {
+    background-color: #1b5e20;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 30px;
+}
+
+footer p {
+    color: white;
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+   ===================================================== */
+
+section {
+    padding: 20px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    nav li {
+        display: block;
+        margin: 5px;
+    }
+
+    nav a {
+        width: 90%;
+    }
+
+    .farm-card {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .gallery img {
+        width: 90%;
+        height: auto;
+    }
+
+    .sensor-container,
+    .plot-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .weather-frame {
+        width: 100%;
+    }
+}

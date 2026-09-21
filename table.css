@@ -1,0 +1,122 @@
+/* =====================================================
+   TASK 7: SOIL MOISTURE & IRRIGATION TABLE
+   ===================================================== */
+
+
+/* Table */
+
+.irrigation-table {
+
+    width: 95%;
+
+    margin: 30px auto;
+
+    border-collapse: collapse;
+
+    background-color: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* Caption */
+
+.irrigation-table caption {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #1b5e20;
+
+    padding: 15px;
+
+}
+
+
+/* Table cells */
+
+.irrigation-table th,
+.irrigation-table td {
+
+    border: 1px solid #555555;
+
+    padding: 12px;
+
+    text-align: center;
+
+}
+
+
+/* Table heading */
+
+.irrigation-table th {
+
+    background-color: #2e7d32;
+
+    color: white;
+
+}
+
+
+/* Even rows */
+
+.irrigation-table tbody tr:nth-child(even) {
+
+    background-color: #e8f5e9;
+
+}
+
+
+/* Odd rows */
+
+.irrigation-table tbody tr:nth-child(odd) {
+
+    background-color: #ffffff;
+
+}
+
+
+/* Row hover */
+
+.irrigation-table tbody tr:hover {
+
+    background-color: #c8e6c9;
+
+}
+
+
+/* Table footer */
+
+.irrigation-table tfoot {
+
+    background-color: #a5d6a7;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE TABLE
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .irrigation-table {
+
+        width: 100%;
+
+        font-size: 12px;
+
+    }
+
+    .irrigation-table th,
+    .irrigation-table td {
+
+        padding: 7px;
+
+    }
+
+}

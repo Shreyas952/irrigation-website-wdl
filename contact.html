@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="form.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>Contact Us</h1>
+
+    <p>
+        Smart Irrigation using AI &amp; Sensor Technology
+    </p>
+
+</header>
+
+
+<nav>
+
+    <ul>
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="farm-info.html">Farm Dashboard</a>
+        </li>
+
+        <li>
+            <a href="advisory.html">Irrigation Advisory</a>
+        </li>
+
+        <li>
+            <a href="sensor-data.html">Sensor Data</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<section>
+
+
+    <div class="info-section">
+
+        <h2>Get in Touch</h2>
+
+        <p>
+            If you have any questions about the Smart Irrigation
+            Advisory System, sensors, irrigation recommendations,
+            or farm registration, please contact us.
+        </p>
+
+    </div>
+
+
+    <div class="info-section">
+
+        <h2>Contact Information</h2>
+
+        <p>
+            <strong>Project:</strong>
+            AI Smart Irrigation Advisory System
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            irrigation.advisory@example.com
+        </p>
+
+        <p>
+            <strong>Mobile:</strong>
+            +91 98765 43210
+        </p>
+
+        <p>
+            <strong>Office Hours:</strong>
+            Monday - Saturday, 9:00 AM - 5:00 PM
+        </p>
+
+    </div>
+
+
+    <div class="info-section">
+
+        <h2>Send Us a Message</h2>
+
+
+        <form id="contactForm">
+
+
+            <fieldset>
+
+                <legend>Contact Form</legend>
+
+
+                <label for="contactName">
+                    Your Name:
+                </label>
+
+                <br>
+
+                <input type="text"
+                       id="contactName"
+                       name="contactName"
+                       placeholder="Enter your name"
+                       required>
+
+
+                <label for="contactEmail">
+                    Email:
+                </label>
+
+                <br>
+
+                <input type="email"
+                       id="contactEmail"
+                       name="contactEmail"
+                       placeholder="example@email.com"
+                       required>
+
+
+                <label for="subject">
+                    Subject:
+                </label>
+
+                <br>
+
+                <input type="text"
+                       id="subject"
+                       name="subject"
+                       placeholder="Enter subject"
+                       required>
+
+
+                <label for="message">
+                    Message:
+                </label>
+
+                <br>
+
+                <textarea id="message"
+                          name="message"
+                          rows="6"
+                          placeholder="Enter your message"
+                          required></textarea>
+
+
+            </fieldset>
+
+
+            <input type="submit"
+                   value="Send Message">
+
+
+            <input type="reset"
+                   value="Clear">
+
+
+        </form>
+
+
+    </div>
+
+
+    <div class="info-section">
+
+        <h2>About the System</h2>
+
+        <p>
+            The AI Smart Irrigation Advisory System helps farmers
+            make better irrigation decisions using soil moisture
+            sensors, weather information, crop stages and
+            intelligent recommendations.
+        </p>
+
+        <ul>
+
+            <li>
+                Soil moisture monitoring
+            </li>
+
+            <li>
+                Weather-based irrigation planning
+            </li>
+
+            <li>
+                Crop-specific recommendations
+            </li>
+
+            <li>
+                Water conservation
+            </li>
+
+            <li>
+                Efficient pump usage
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 AI Smart Irrigation Advisory System
+    </p>
+
+</footer>
+
+
+<script>
+
+    document.getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let name =
+            document.getElementById("contactName").value.trim();
+
+        let email =
+            document.getElementById("contactEmail").value.trim();
+
+        let subject =
+            document.getElementById("subject").value.trim();
+
+        let message =
+            document.getElementById("message").value.trim();
+
+
+        if (
+            name === "" ||
+            email === "" ||
+            subject === "" ||
+            message === ""
+        ) {
+
+            alert("Please fill in all fields.");
+
+            return;
+
+        }
+
+
+        alert(
+            "Message Sent Successfully!\n\n" +
+            "Thank you, " + name + ".\n" +
+            "We will get back to you soon."
+        );
+
+
+        document.getElementById("contactForm").reset();
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

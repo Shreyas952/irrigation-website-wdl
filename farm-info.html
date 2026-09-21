@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Farm Information</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>Farm Information</h1>
+
+    <p>
+        Smart Irrigation using AI &amp; Sensor Technology
+    </p>
+
+</header>
+
+
+<nav>
+
+    <ul>
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="farm-info.html">Farm Dashboard</a></li>
+
+        <li><a href="advisory.html">Irrigation Advisory</a></li>
+
+        <li><a href="sensor-data.html">Sensor Data</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+
+<main class="page-container">
+
+
+<aside class="sidebar">
+
+    <h2>Farm Information</h2>
+
+    <ul>
+
+        <li><a href="#farm-details">Farm Details</a></li>
+
+        <li><a href="#workflow">Irrigation Workflow</a></li>
+
+        <li><a href="#sensors">Sensors Used</a></li>
+
+        <li><a href="#stages">Crop Stages</a></li>
+
+    </ul>
+
+</aside>
+
+
+<section class="content">
+
+
+<!-- ==========================================
+     TASK 3 - FARM OBJECT INFORMATION
+     ========================================== -->
+
+<div class="info-section" id="farm-details">
+
+    <h2>Farm Details</h2>
+
+    <p>
+        <strong>Farmer Name:</strong>
+        <span id="farmerName"></span>
+    </p>
+
+    <p>
+        <strong>Plot ID:</strong>
+        <span id="plotId"></span>
+    </p>
+
+    <p>
+        <strong>Crop Stage:</strong>
+        <span id="cropStage"></span>
+    </p>
+
+    <p>
+        <strong>Soil Moisture:</strong>
+        <span id="soilMoisture"></span>%
+    </p>
+
+    <p>
+        <strong>Area:</strong>
+        <span id="area"></span> acres
+    </p>
+
+    <p>
+        <strong>Pump Status:</strong>
+        <span id="pumpStatus"></span>
+    </p>
+
+    <p>
+        <strong>Irrigation Requirement:</strong>
+        <span id="irrigationStatus"></span>
+    </p>
+
+    <button onclick="turnPumpOn()">
+        Turn Pump ON
+    </button>
+
+    <button onclick="turnPumpOff()">
+        Turn Pump OFF
+    </button>
+
+</div>
+
+
+<!-- ==========================================
+     IRRIGATION WORKFLOW
+     ========================================== -->
+
+<div class="info-section" id="workflow">
+
+    <h2>Irrigation Workflow</h2>
+
+    <ol>
+
+        <li>Collect soil moisture data.</li>
+
+        <li>Collect weather forecast data.</li>
+
+        <li>Analyze the data using <b>AI algorithms</b>.</li>
+
+        <li>Generate irrigation recommendation.</li>
+
+        <li>
+            <mark>Apply recommended irrigation.</mark>
+        </li>
+
+    </ol>
+
+</div>
+
+
+<!-- ==========================================
+     SENSORS
+     ========================================== -->
+
+<div class="info-section" id="sensors">
+
+    <h2>Sensors Used</h2>
+
+    <ul>
+
+        <li><b>Soil Moisture Sensor</b></li>
+
+        <li>Temperature Sensor</li>
+
+        <li>Humidity Sensor</li>
+
+        <li>Rainfall Sensor</li>
+
+    </ul>
+
+</div>
+
+
+<!-- ==========================================
+     CROP STAGES
+     ========================================== -->
+
+<div class="info-section" id="stages">
+
+    <h2>Crop Stages</h2>
+
+    <dl>
+
+        <dt>Germination</dt>
+
+        <dd>
+            Initial stage when the sugarcane crop begins to grow.
+        </dd>
+
+
+        <dt>Tillering</dt>
+
+        <dd>
+            Development of new shoots from the base of the plant.
+        </dd>
+
+
+        <dt>Grand Growth</dt>
+
+        <dd>
+            <i>Rapid growth</i> and development of the crop.
+        </dd>
+
+
+        <dt>Maturity</dt>
+
+        <dd>
+            <mark>Final stage</mark> when the crop is ready for harvesting.
+        </dd>
+
+    </dl>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 AI Smart Irrigation Advisory System
+    </p>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   TASK 3: JAVASCRIPT FARM OBJECT
+   ========================================== */
+
+let farm = {
+
+    // Object Properties
+
+    farmerName: "Rajesh Patil",
+
+    plotId: "PLOT-A01",
+
+    cropStage: "Grand Growth",
+
+    soilMoisture: 28,
+
+    area: 2.5,
+
+    pumpStatus: "OFF",
+
+
+    // Method 1: Display Farm Information
+
+    displayFarmInfo: function() {
+
+        document.getElementById("farmerName").innerHTML =
+            this.farmerName;
+
+        document.getElementById("plotId").innerHTML =
+            this.plotId;
+
+        document.getElementById("cropStage").innerHTML =
+            this.cropStage;
+
+        document.getElementById("soilMoisture").innerHTML =
+            this.soilMoisture;
+
+        document.getElementById("area").innerHTML =
+            this.area;
+
+        document.getElementById("pumpStatus").innerHTML =
+            this.pumpStatus;
+
+        document.getElementById("irrigationStatus").innerHTML =
+            this.checkIrrigationRequirement();
+    },
+
+
+    // Method 2: Check Irrigation Requirement
+
+    checkIrrigationRequirement: function() {
+
+        if (this.soilMoisture < 30) {
+
+            return "Irrigation Required Immediately";
+
+        }
+
+        else if (this.soilMoisture >= 30 &&
+                 this.soilMoisture <= 50) {
+
+            return "Monitor Soil Moisture";
+
+        }
+
+        else {
+
+            return "Irrigation Not Required";
+
+        }
+    },
+
+
+    // Method 3: Update Pump Status
+
+    updatePumpStatus: function(status) {
+
+        this.pumpStatus = status;
+
+        document.getElementById("pumpStatus").innerHTML =
+            this.pumpStatus;
+
+    }
+
+};
+
+
+/* Display farm information when page loads */
+
+farm.displayFarmInfo();
+
+
+/* Function to turn pump ON */
+
+function turnPumpOn() {
+
+    farm.updatePumpStatus("ON");
+
+    alert("Pump has been turned ON.");
+
+}
+
+
+/* Function to turn pump OFF */
+
+function turnPumpOff() {
+
+    farm.updatePumpStatus("OFF");
+
+    alert("Pump has been turned OFF.");
+
+}
+
+</script>
+
+
+</body>
+
+</html>

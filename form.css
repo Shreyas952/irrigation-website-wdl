@@ -1,0 +1,224 @@
+/* =====================================================
+   TASK 8: FARMER REGISTRATION FORM
+   ===================================================== */
+
+
+/* Form container */
+
+form {
+
+    width: 80%;
+
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =====================================================
+   FIELDSET
+   ===================================================== */
+
+fieldset {
+
+    border: 2px solid #4caf50;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =====================================================
+   LEGEND
+   ===================================================== */
+
+legend {
+
+    color: #1b5e20;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    padding: 0 10px;
+
+}
+
+
+/* =====================================================
+   LABEL
+   ===================================================== */
+
+label {
+
+    display: inline-block;
+
+    font-weight: bold;
+
+    color: #333333;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =====================================================
+   INPUT BOXES
+   ===================================================== */
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="file"],
+select {
+
+    width: 95%;
+
+    padding: 12px;
+
+    margin-top: 5px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #999999;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   TASK 8: FOCUS EFFECT
+   ===================================================== */
+
+input:focus,
+select:focus {
+
+    outline: none;
+
+    border: 2px solid #2e7d32;
+
+    background-color: #f1f8e9;
+
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+   ===================================================== */
+
+input[type="submit"] {
+
+    background-color: #2e7d32;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+/* Submit hover */
+
+input[type="submit"]:hover {
+
+    background-color: #f9a825;
+
+    color: black;
+
+}
+
+
+/* =====================================================
+   RESET BUTTON
+   ===================================================== */
+
+input[type="reset"] {
+
+    background-color: #757575;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    margin-left: 10px;
+
+}
+
+
+input[type="reset"]:hover {
+
+    background-color: #424242;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE FORM
+   ===================================================== */
+
+@media screen and (max-width: 600px) {
+
+    form {
+
+        width: 90%;
+
+        padding: 15px;
+
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+
+        width: 100%;
+
+        margin: 5px 0;
+
+    }
+
+}
+.invalid {
+    border: 2px solid red;
+    background-color: #ffecec;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-left: 10px;
+    display: inline-block;
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Irrigation Advisory</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>Irrigation Advisory</h1>
+
+    <p>
+        Smart Irrigation using AI &amp; Sensor Technology
+    </p>
+
+</header>
+
+
+<nav>
+
+    <ul>
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="farm-info.html">Farm Dashboard</a></li>
+
+        <li><a href="advisory.html">Irrigation Advisory</a></li>
+
+        <li><a href="sensor-data.html">Sensor Data</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+
+<section>
+
+    <div class="advisory-box">
+
+        <h2>Today's Irrigation Recommendation</h2>
+
+        <hr>
+
+        <p>
+
+            <strong>Plot ID:</strong>
+            <span id="plotId">PLOT-A01</span>
+
+            <br>
+
+            <strong>Farmer Name:</strong>
+            <span id="farmerName">Rajesh Patil</span>
+
+            <br>
+
+            <strong>Soil Moisture:</strong>
+            <span id="soilMoisture">28%</span>
+
+            <br>
+
+            <strong>Required Soil Moisture:</strong>
+            <span id="requiredMoisture">50%</span>
+
+            <br>
+
+            <strong>Moisture Deficit:</strong>
+            <span id="moistureDeficit"></span>
+
+            <br>
+
+            <strong>Crop Stage:</strong>
+            <span id="cropStage">Grand Growth</span>
+
+            <br>
+
+            <strong>Rainfall Forecast:</strong>
+            <span id="rainfallForecast">No</span>
+
+            <br>
+
+            <strong>Recommended Irrigation Duration:</strong>
+            <em>45 minutes</em>
+
+            <br>
+
+            <strong>Water Stress Level:</strong>
+            <mark class="stress-medium" id="stressLevel">
+                Medium
+            </mark>
+
+        </p>
+
+        <hr>
+
+        <h3 id="recommendation"></h3>
+
+        <small>
+            Recommendation generated using soil moisture,
+            crop stage and weather information.
+        </small>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 AI Smart Irrigation Advisory System
+    </p>
+
+</footer>
+
+
+<script>
+
+    
+    let farmerName = "Rajesh Patil";
+    let plotId = "PLOT-A01";
+
+    let currentSoilMoisture = 28;
+    let requiredSoilMoisture = 50;
+
+    // Calculate moisture deficit
+    let moistureDeficit =
+        requiredSoilMoisture - currentSoilMoisture;
+
+    // Display moisture deficit on webpage
+    document.getElementById("moistureDeficit").innerHTML =
+        moistureDeficit + "%";
+
+
+    // ==========================================
+    // TASK 2: IRRIGATION DECISION
+    // ==========================================
+
+    let soilMoisture = currentSoilMoisture;
+
+    let rainfallForecast = "No";
+
+    let cropStage = "Grand Growth";
+
+    let recommendation;
+
+
+    // Decision rules
+
+    if (rainfallForecast.toLowerCase() === "yes") {
+
+        recommendation =
+            "Postpone Irrigation - Rain Expected";
+
+    }
+
+    else if (soilMoisture < 30) {
+
+        recommendation =
+            "Irrigation Required Immediately";
+
+    }
+
+    else if (soilMoisture >= 30 &&
+             soilMoisture <= 50) {
+
+        recommendation =
+            "Monitor Soil Moisture";
+
+    }
+
+    else if (soilMoisture > 50) {
+
+        recommendation =
+            "Irrigation Not Required";
+
+    }
+
+
+    // Display recommendation on webpage
+    document.getElementById("recommendation").innerHTML =
+        "Recommendation: " + recommendation;
+
+
+    // ==========================================
+    // ALERT()
+    // ==========================================
+
+    alert(
+        "Irrigation Advisory\n\n" +
+
+        "Farmer Name: " + farmerName +
+        "\nPlot ID: " + plotId +
+
+        "\nCurrent Soil Moisture: " +
+        currentSoilMoisture + "%" +
+
+        "\nRequired Soil Moisture: " +
+        requiredSoilMoisture + "%" +
+
+        "\nMoisture Deficit: " +
+        moistureDeficit + "%" +
+
+        "\nCrop Stage: " +
+        cropStage +
+
+        "\nRainfall Forecast: " +
+        rainfallForecast +
+
+        "\n\nRecommendation: " +
+        recommendation
+    );
+
+
+    // ==========================================
+    // DOCUMENT.WRITE()
+    // ==========================================
+
+    // Task 1 specifically requires document.write().
+    // This demonstrates document.write without
+    // replacing the complete existing page.
+
+    document.write(
+        "<!-- Moisture deficit calculated: " +
+        moistureDeficit +
+        "% -->"
+    );
+
+</script>
+
+
+</body>
+
+</html>
