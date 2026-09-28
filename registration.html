@@ -284,218 +284,119 @@
 
 <script>
 
-document.getElementById("registrationForm")
-.addEventListener("submit", function(event) {
+$(document).ready(function() {
 
-    event.preventDefault();
+    $("#registrationForm").on("submit", function(event) {
 
-    let farmerName =
-        document.getElementById("name").value.trim();
+        event.preventDefault();
 
-    let mobileNumber =
-        document.getElementById("mobile").value.trim();
+        let farmerName = $("#name").val().trim();
+        let mobileNumber = $("#mobile").val().trim();
+        let email = $("#email").val().trim();
+        let plotId = $("#plot").val().trim();
+        let village = $("#village").val().trim();
+        let cropStage = $("#stage").val();
+        let soilType = $("#soil").val();
+        let irrigationMethod = $("#irrigation").val();
+        let registrationDate = $("#date").val();
+        let farmPhoto = $("#photo").val();
 
-    let email =
-        document.getElementById("email").value.trim();
+        $(".error-message").remove();
+        $(".invalid").removeClass("invalid");
 
-    let plotId =
-        document.getElementById("plot").value.trim();
+        let valid = true;
 
-    let village =
-        document.getElementById("village").value.trim();
-
-    let cropStage =
-        document.getElementById("stage").value;
-
-    let soilType =
-        document.getElementById("soil").value;
-
-    let irrigationMethod =
-        document.getElementById("irrigation").value;
-
-    let registrationDate =
-        document.getElementById("date").value;
-
-    let farmPhoto =
-        document.getElementById("photo").value;
-
-    document.querySelectorAll(".error-message")
-    .forEach(function(error) {
-        error.remove();
-    });
-
-    document.querySelectorAll(".invalid")
-    .forEach(function(field) {
-        field.classList.remove("invalid");
-    });
-
-    let valid = true;
-
-    function showError(field, message) {
-        field.classList.add("invalid");
-
-        let error = document.createElement("span");
-        error.className = "error-message";
-        error.textContent = message;
-
-        field.parentNode.insertBefore(
-            error,
-            field.nextSibling
-        );
-
-        valid = false;
-    }
-
-    let namePattern = /^[A-Za-z ]+$/;
-    let mobilePattern = /^[6-9][0-9]{9}$/;
-    let emailPattern =
-        /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-    if (farmerName === "") {
-        showError(
-            document.getElementById("name"),
-            "Farmer Name is required."
-        );
-    }
-    else if (!namePattern.test(farmerName)) {
-        showError(
-            document.getElementById("name"),
-            "Only alphabets and spaces are allowed."
-        );
-    }
-
-    if (mobileNumber === "") {
-        showError(
-            document.getElementById("mobile"),
-            "Mobile Number is required."
-        );
-    }
-    else if (!mobilePattern.test(mobileNumber)) {
-        showError(
-            document.getElementById("mobile"),
-            "Enter a valid 10-digit Indian mobile number."
-        );
-    }
-
-    if (email === "") {
-        showError(
-            document.getElementById("email"),
-            "Email is required."
-        );
-    }
-    else if (!emailPattern.test(email)) {
-        showError(
-            document.getElementById("email"),
-            "Enter a valid email address."
-        );
-    }
-
-    if (plotId === "") {
-        showError(
-            document.getElementById("plot"),
-            "Plot ID is required."
-        );
-    }
-
-    if (village === "") {
-        showError(
-            document.getElementById("village"),
-            "Village is required."
-        );
-    }
-
-    if (cropStage === "") {
-        showError(
-            document.getElementById("stage"),
-            "Please select Crop Stage."
-        );
-    }
-
-    if (soilType === "") {
-        showError(
-            document.getElementById("soil"),
-            "Please select Soil Type."
-        );
-    }
-
-    if (irrigationMethod === "") {
-        showError(
-            document.getElementById("irrigation"),
-            "Please select Irrigation Method."
-        );
-    }
-
-    if (registrationDate === "") {
-        showError(
-            document.getElementById("date"),
-            "Registration Date is required."
-        );
-    }
-    else {
-        let today =
-            new Date().toISOString().split("T")[0];
-
-        if (registrationDate > today) {
-            showError(
-                document.getElementById("date"),
-                "Registration Date cannot be in the future."
-            );
+        function showError(field, message) {
+            $(field).addClass("invalid");
+            $("<span>")
+                .addClass("error-message")
+                .text(message)
+                .insertAfter(field);
+            valid = false;
         }
-    }
 
-    if (farmPhoto === "") {
-        showError(
-            document.getElementById("photo"),
-            "Farm Photo is required."
+        let namePattern = /^[A-Za-z ]+$/;
+        let mobilePattern = /^[6-9][0-9]{9}$/;
+        let emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        if (farmerName === "") {
+            showError("#name", "Farmer Name is required.");
+        } else if (!namePattern.test(farmerName)) {
+            showError("#name", "Only alphabets and spaces are allowed.");
+        }
+
+        if (mobileNumber === "") {
+            showError("#mobile", "Mobile Number is required.");
+        } else if (!mobilePattern.test(mobileNumber)) {
+            showError("#mobile", "Enter a valid 10-digit Indian mobile number.");
+        }
+
+        if (email === "") {
+            showError("#email", "Email is required.");
+        } else if (!emailPattern.test(email)) {
+            showError("#email", "Enter a valid email address.");
+        }
+
+        if (plotId === "") {
+            showError("#plot", "Plot ID is required.");
+        }
+
+        if (village === "") {
+            showError("#village", "Village is required.");
+        }
+
+        if (cropStage === "") {
+            showError("#stage", "Please select Crop Stage.");
+        }
+
+        if (soilType === "") {
+            showError("#soil", "Please select Soil Type.");
+        }
+
+        if (irrigationMethod === "") {
+            showError("#irrigation", "Please select Irrigation Method.");
+        }
+
+        if (registrationDate === "") {
+            showError("#date", "Registration Date is required.");
+        } else {
+            let today = new Date().toISOString().split("T")[0];
+
+            if (registrationDate > today) {
+                showError("#date", "Registration Date cannot be in the future.");
+            }
+        }
+
+        if (farmPhoto === "") {
+            showError("#photo", "Farm Photo is required.");
+        }
+
+        if (!valid) {
+            return;
+        }
+
+        alert(
+            "Farmer Registration Successful!\n\n" +
+            "Farmer Name: " + farmerName + "\n" +
+            "Mobile Number: " + mobileNumber + "\n" +
+            "Email: " + email + "\n" +
+            "Plot ID: " + plotId + "\n" +
+            "Village: " + village + "\n" +
+            "Crop Stage: " + cropStage + "\n" +
+            "Soil Type: " + soilType + "\n" +
+            "Irrigation Method: " + irrigationMethod + "\n" +
+            "Registration Date: " + registrationDate
         );
-    }
+    });
 
-    if (!valid) {
-        return;
-    }
+    $("#registrationForm").on("reset", function() {
 
-    alert(
-        "Farmer Registration Successful!\n\n" +
+        setTimeout(function() {
+            $(".error-message").remove();
+            $(".invalid").removeClass("invalid");
+        }, 0);
 
-        "Farmer Name: " + farmerName + "\n" +
-
-        "Mobile Number: " + mobileNumber + "\n" +
-
-        "Email: " + email + "\n" +
-
-        "Plot ID: " + plotId + "\n" +
-
-        "Village: " + village + "\n" +
-
-        "Crop Stage: " + cropStage + "\n" +
-
-        "Soil Type: " + soilType + "\n" +
-
-        "Irrigation Method: " +
-        irrigationMethod + "\n" +
-
-        "Registration Date: " +
-        registrationDate
-    );
-
-});
-
-document.getElementById("registrationForm")
-.addEventListener("reset", function() {
-
-    setTimeout(function() {
-
-        document.querySelectorAll(".error-message")
-        .forEach(function(error) {
-            error.remove();
-        });
-
-        document.querySelectorAll(".invalid")
-        .forEach(function(field) {
-            field.classList.remove("invalid");
-        });
-
-    }, 0);
+    });
 
 });
 
