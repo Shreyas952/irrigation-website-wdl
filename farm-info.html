@@ -16,9 +16,7 @@
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -29,7 +27,6 @@
     </p>
 
 </header>
-
 
 <nav>
 
@@ -49,9 +46,7 @@
 
 </nav>
 
-
 <main class="page-container">
-
 
 <aside class="sidebar">
 
@@ -71,13 +66,7 @@
 
 </aside>
 
-
 <section class="content">
-
-
-<!-- ==========================================
-     TASK 3 - FARM OBJECT INFORMATION
-     ========================================== -->
 
 <div class="info-section" id="farm-details">
 
@@ -128,11 +117,6 @@
 
 </div>
 
-
-<!-- ==========================================
-     IRRIGATION WORKFLOW
-     ========================================== -->
-
 <div class="info-section" id="workflow">
 
     <h2>Irrigation Workflow</h2>
@@ -155,11 +139,6 @@
 
 </div>
 
-
-<!-- ==========================================
-     SENSORS
-     ========================================== -->
-
 <div class="info-section" id="sensors">
 
     <h2>Sensors Used</h2>
@@ -178,11 +157,6 @@
 
 </div>
 
-
-<!-- ==========================================
-     CROP STAGES
-     ========================================== -->
-
 <div class="info-section" id="stages">
 
     <h2>Crop Stages</h2>
@@ -195,20 +169,17 @@
             Initial stage when the sugarcane crop begins to grow.
         </dd>
 
-
         <dt>Tillering</dt>
 
         <dd>
             Development of new shoots from the base of the plant.
         </dd>
 
-
         <dt>Grand Growth</dt>
 
         <dd>
             <i>Rapid growth</i> and development of the crop.
         </dd>
-
 
         <dt>Maturity</dt>
 
@@ -220,11 +191,9 @@
 
 </div>
 
-
 </section>
 
 </main>
-
 
 <footer>
 
@@ -234,16 +203,9 @@
 
 </footer>
 
-
 <script>
 
-/* ==========================================
-   TASK 3: JAVASCRIPT FARM OBJECT
-   ========================================== */
-
 let farm = {
-
-    // Object Properties
 
     farmerName: "Rajesh Patil",
 
@@ -256,9 +218,6 @@ let farm = {
     area: 2.5,
 
     pumpStatus: "OFF",
-
-
-    // Method 1: Display Farm Information
 
     displayFarmInfo: function() {
 
@@ -284,9 +243,6 @@ let farm = {
             this.checkIrrigationRequirement();
     },
 
-
-    // Method 2: Check Irrigation Requirement
-
     checkIrrigationRequirement: function() {
 
         if (this.soilMoisture < 30) {
@@ -309,9 +265,6 @@ let farm = {
         }
     },
 
-
-    // Method 3: Update Pump Status
-
     updatePumpStatus: function(status) {
 
         this.pumpStatus = status;
@@ -323,13 +276,7 @@ let farm = {
 
 };
 
-
-/* Display farm information when page loads */
-
 farm.displayFarmInfo();
-
-
-/* Function to turn pump ON */
 
 function turnPumpOn() {
 
@@ -338,9 +285,6 @@ function turnPumpOn() {
     alert("Pump has been turned ON.");
 
 }
-
-
-/* Function to turn pump OFF */
 
 function turnPumpOff() {
 
@@ -351,7 +295,6 @@ function turnPumpOff() {
 }
 
 </script>
-
 
 </body>
 

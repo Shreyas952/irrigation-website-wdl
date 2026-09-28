@@ -1,9 +1,3 @@
-/* =====================================================
-   TASK 8: FARMER REGISTRATION FORM
-   ===================================================== */
-
-
-/* Form container */
 
 form {
 
@@ -23,11 +17,6 @@ form {
 
 }
 
-
-/* =====================================================
-   FIELDSET
-   ===================================================== */
-
 fieldset {
 
     border: 2px solid #4caf50;
@@ -39,11 +28,6 @@ fieldset {
     margin-bottom: 20px;
 
 }
-
-
-/* =====================================================
-   LEGEND
-   ===================================================== */
 
 legend {
 
@@ -57,11 +41,6 @@ legend {
 
 }
 
-
-/* =====================================================
-   LABEL
-   ===================================================== */
-
 label {
 
     display: inline-block;
@@ -73,11 +52,6 @@ label {
     margin-bottom: 5px;
 
 }
-
-
-/* =====================================================
-   INPUT BOXES
-   ===================================================== */
 
 input[type="text"],
 input[type="tel"],
@@ -104,11 +78,6 @@ select {
 
 }
 
-
-/* =====================================================
-   TASK 8: FOCUS EFFECT
-   ===================================================== */
-
 input:focus,
 select:focus {
 
@@ -119,11 +88,6 @@ select:focus {
     background-color: #f1f8e9;
 
 }
-
-
-/* =====================================================
-   SUBMIT BUTTON
-   ===================================================== */
 
 input[type="submit"] {
 
@@ -143,9 +107,6 @@ input[type="submit"] {
 
 }
 
-
-/* Submit hover */
-
 input[type="submit"]:hover {
 
     background-color: #f9a825;
@@ -153,11 +114,6 @@ input[type="submit"]:hover {
     color: black;
 
 }
-
-
-/* =====================================================
-   RESET BUTTON
-   ===================================================== */
 
 input[type="reset"] {
 
@@ -179,17 +135,11 @@ input[type="reset"] {
 
 }
 
-
 input[type="reset"]:hover {
 
     background-color: #424242;
 
 }
-
-
-/* =====================================================
-   RESPONSIVE FORM
-   ===================================================== */
 
 @media screen and (max-width: 600px) {
 
@@ -211,6 +161,7 @@ input[type="reset"]:hover {
     }
 
 }
+
 .invalid {
     border: 2px solid red;
     background-color: #ffecec;
@@ -222,3 +173,4 @@ input[type="reset"]:hover {
     margin-left: 10px;
     display: inline-block;
 }
+

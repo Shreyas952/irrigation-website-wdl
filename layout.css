@@ -1,78 +1,42 @@
-/* =====================================================
-   TASK 9: PAGE LAYOUT
-   ===================================================== */
-
-
-/* Main container */
-
 .page-container {
     display: flex;
-
     align-items: flex-start;
-
     max-width: 1200px;
-
     margin: 0 auto;
-
     min-height: 500px;
 }
 
-
-/* Sidebar - LEFT */
-
 .sidebar {
     width: 25%;
-
     flex-shrink: 0;
-
     margin: 20px;
-
     padding: 20px;
 }
-
-
-/* Main content - RIGHT */
 
 .content {
     width: 75%;
-
     padding: 20px;
-
     margin: 20px;
-
     background-color: white;
-
     border-radius: 10px;
-
     min-height: 450px;
 }
 
-
-/* Footer - BOTTOM */
-
 footer {
     clear: both;
-
     width: 100%;
 }
-
-
-/* =====================================================
-   RESPONSIVE LAYOUT
-   ===================================================== */
 
 @media screen and (max-width: 768px) {
 
     .page-container {
         flex-direction: column;
-
         width: 100%;
     }
 
     .sidebar,
     .content {
         width: auto;
-
         margin: 15px;
     }
 
@@ -84,3 +48,4 @@ footer {
         order: 2;
     }
 }
+

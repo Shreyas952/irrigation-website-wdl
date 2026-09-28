@@ -137,18 +137,16 @@
     let currentSoilMoisture = 28;
     let requiredSoilMoisture = 50;
 
-    // Calculate moisture deficit
+    
     let moistureDeficit =
         requiredSoilMoisture - currentSoilMoisture;
 
-    // Display moisture deficit on webpage
+    
     document.getElementById("moistureDeficit").innerHTML =
         moistureDeficit + "%";
 
 
-    // ==========================================
-    // TASK 2: IRRIGATION DECISION
-    // ==========================================
+    
 
     let soilMoisture = currentSoilMoisture;
 
@@ -159,7 +157,7 @@
     let recommendation;
 
 
-    // Decision rules
+    
 
     if (rainfallForecast.toLowerCase() === "yes") {
 
@@ -191,14 +189,12 @@
     }
 
 
-    // Display recommendation on webpage
+    
     document.getElementById("recommendation").innerHTML =
         "Recommendation: " + recommendation;
 
 
-    // ==========================================
-    // ALERT()
-    // ==========================================
+    
 
     alert(
         "Irrigation Advisory\n\n" +
@@ -224,15 +220,6 @@
         "\n\nRecommendation: " +
         recommendation
     );
-
-
-    // ==========================================
-    // DOCUMENT.WRITE()
-    // ==========================================
-
-    // Task 1 specifically requires document.write().
-    // This demonstrates document.write without
-    // replacing the complete existing page.
 
     document.write(
         "<!-- Moisture deficit calculated: " +
